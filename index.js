@@ -24,8 +24,10 @@ async function getTime() {
         console.log(data)
         const hour = document.querySelector('.Hours');
         const minutes = document.querySelector('.Minutes');
+        const seconds = document.querySelector('.Seconds');
         hour.innerHTML = data.hour
         minutes.innerHTML = data.minute
+        seconds.textContent = data.seconds
     }catch(error){
         console.error("error", error)
     }
@@ -33,3 +35,4 @@ async function getTime() {
     
 }
 getTime();
+setInterval(getTime, 1000);
